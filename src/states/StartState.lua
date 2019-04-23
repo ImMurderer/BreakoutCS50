@@ -9,6 +9,13 @@ function StartState:update(dt)
         gSounds['paddle-hit']:play()
     end
 
+    if love.keyboard.wasPressed('return') or love.keyboard.wasPressed('enter') then
+        if highlighted == 1 then
+            gStateMachine:change('play')
+            gSounds['paddle-hit']:play()
+        end
+    end
+
     if love.keyboard.wasPressed('escape') then
         love.event.quit()
     end
